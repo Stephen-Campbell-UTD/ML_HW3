@@ -20,6 +20,7 @@ X_train, X_test, y_train, y_test = train_test_split(
     X_all, y_all, test_size=0.4, random_state=1)
 X_val, X_test, y_val, y_test = train_test_split(
     X_test, y_test, test_size=0.5, random_state=1)
+
 # %%
 # (ii)
 min_samples = list(range(1, 26))
