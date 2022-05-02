@@ -54,7 +54,7 @@ def p_i():
     # ~ 9 is the best miniumum number of leaf node observations
 
     clf = tree.DecisionTreeClassifier(
-        min_samples_leaf=bestMinNumberSamples).fit(X_test, y_test)
+        min_samples_leaf=bestMinNumberSamples).fit(X_train, y_train)
     y_test_pred = clf.predict(X_test)
     test_accuracy = jaccard_score(y_test, y_test_pred)
     print(test_accuracy)
@@ -65,8 +65,10 @@ def p_i():
     disp = ConfusionMatrixDisplay(
         confusion_matrix=test_confusion_matrix, display_labels=clf.classes_)
     disp.plot()
+    plt.savefig('./images/P2_HeartDisease_ConfusionMatrix')
 
-# p_i()
+
+p_i()
 
 
 def p_iv():
@@ -106,7 +108,7 @@ def p_iv():
     print(bestMinNumberSamples)
 
     clf = tree.DecisionTreeClassifier(
-        min_samples_leaf=bestMinNumberSamples).fit(X_test, y_test)
+        min_samples_leaf=bestMinNumberSamples).fit(X_train, y_train)
     y_test_pred = clf.predict(X_test)
     test_accuracy = accuracy_score(y_test, y_test_pred)
     print(test_accuracy)
@@ -116,6 +118,9 @@ def p_iv():
     disp = ConfusionMatrixDisplay(
         confusion_matrix=test_confusion_matrix, display_labels=clf.classes_)
     disp.plot()
+    plt.savefig('./images/P2_iv_RestingECG_Confusion')
 
 
 p_iv()
+
+# %%

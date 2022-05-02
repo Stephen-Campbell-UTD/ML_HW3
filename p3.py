@@ -49,9 +49,23 @@ ax2.plot(history.history["val_root_mean_squared_error"])
 ax2.set_xlabel("Epoch")
 ax2.grid(True)
 
-plt.savefig('./images/P3_i_AccuracyvsEpoch.png')
+plt.savefig('./images/P3_i_RMSEvsEpoch.png')
 
 # %%
-print(history.history)
+# print(history.history)
+# fig, (ax1, ax2) = plt.subplots(2, sharex=True, constrained_layout=True)
+# # training accuracy
+# ax1.plot(history.history["sparse_categorical_accuracy"])
+# ax1.grid(True)
+# ax1.set_title("Training Accuracy")
 
-# %%
+
+# # testing accuracy
+# ax2.set_title("Testing Accuracy")
+# ax2.plot(history.history["val_sparse_categorical_accuracy"])
+# ax2.set_xlabel("Epoch")
+# ax2.grid(True)
+
+# plt.savefig('./plot.png')
+
+# # %%
